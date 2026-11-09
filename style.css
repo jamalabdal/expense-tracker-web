@@ -1,0 +1,75 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --danger: #dc2626;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { text-align: center; }
+h2 { font-size: 1.1rem; margin: 24px 0 8px; }
+
+.summary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.card span { color: var(--muted); font-size: 0.85rem; }
+.card strong { font-size: 1.5rem; }
+
+form { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+input, select, button {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+#description { flex: 2 1 160px; }
+#amount { flex: 1 1 100px; }
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover { opacity: 0.9; }
+
+.bar-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; font-size: 0.9rem; }
+.bar-label { width: 110px; }
+.bar-track { flex: 1; background: #e5e7eb; border-radius: 6px; height: 14px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); transition: width 0.3s; }
+.bar-value { width: 70px; text-align: right; color: var(--muted); }
+
+.list-header { display: flex; justify-content: space-between; align-items: center; }
+ul { list-style: none; padding: 0; margin: 0; }
+li {
+  background: var(--card);
+  margin-bottom: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.info { flex: 1; }
+.info small { color: var(--muted); display: block; }
+.amount { font-weight: 600; }
+.delete { background: none; color: var(--danger); border: none; font-size: 1.2rem; padding: 4px 8px; }
+.empty { text-align: center; color: var(--muted); padding: 16px; }
